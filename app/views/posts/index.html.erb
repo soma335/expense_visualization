@@ -1,0 +1,23 @@
+<% if user_signed_in? %>
+  <table>
+    <thead>
+      <tr>
+        <th>投稿日時</th>
+        <th>No.</th>
+        <th>値段</th>
+      </tr>
+    </thead>
+    <thead>
+      <% @posts.each do |post| %>
+      <tr>
+        <th><%= image_tag post.image.to_s %></th>
+        <th><%= post.name %></th>
+        <th><%= post.price %></th>
+      </tr>
+      <% end %>
+    </thead>
+  </table>
+<% else %>
+  <h1>当サイトはレシートをためるストレージです。</h1>
+  新規登録はこちら
+<% end %>

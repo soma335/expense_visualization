@@ -1,0 +1,17 @@
+<% @page_title = "レシート" %>
+
+<h1><%= @page_title %></h1>
+
+<div class="toolbar"><%= link_to "編集", edit_post_url %></div>
+
+<table class="attr">
+  <tr>
+    <th width="150">投稿日時</th>
+    <th>投稿名</th>
+    <td><%= @posts.name %></td>
+    <th>値段</th>
+    <td><%= @posts.price %></td>
+    <th>レシート</th>
+    <td id="class" ><%= image_tag(@posts.image.to_s) %></td>
+  </tr>
+</table>

@@ -1,0 +1,18 @@
+
+@startuml
+
+object User
+User : userid
+User : email
+User : password
+
+object Post
+Post : name
+Post : description
+Post : image
+Post : created_at
+
+User -> Post
+
+
+@enduml

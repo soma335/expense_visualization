@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: 次回から自動的にログイン
+        username: ユーザ名
+  errors:
+    messages:
+      carrierwave_processing_error: 処理できませんでした
+      carrierwave_integrity_error: は許可されていないファイルタイプです
+      carrierwave_download_error: はダウンロードできません
+      record_invalid: "%{errors}"
+      extension_whitelist_error: "%{errors}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{errors}"
+      extension_blacklist_error: "%{errors}ファイルのアップロードは許可されていません。アップロードできないファイルタイプ: %{errors}"
+      content_type_whitelist_error: "%{errors}ファイルのアップロードは許可されていません"
+      content_type_blacklist_error: "%{errors}ファイルのアップロードは許可されていません"
+      rmagick_processing_error: "rmagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{errors}"
+      mini_magick_processing_error: "MiniMagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{errors}"
+      min_size_error: "ファイルを%{errors}バイト以上のサイズにしてください"
+      max_size_error: "ファイルを%{errors}バイト以下のサイズにしてください"
