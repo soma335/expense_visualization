@@ -9,6 +9,7 @@ header {
   padding: 15px 0;
   background-color: #337079;
   color: white;
+  font-family: YuGothic,sans-serif;
 }
 header .headline{
   line-height: 100px;
@@ -32,4 +33,31 @@ header .headline{
 .picture {
   width: 20px;
   height: 20px;
+}
+@media screen and ( max-width:479px )
+{
+  header {
+    height: 60px;
+    width: 400px;
+    padding: 15px 0;
+    background-color: #337079;
+    color: white;
+    font-family: YuGothic,sans-serif;
+  }
+  .nav-list{
+    line-height: 10px;
+    float: left;
+    margin-left: 3px;
+    list-style: none;
+  }
+  .nav-list-item {
+    list-style: none;
+    display: inline-block;
+    margin:0 2px;
+  }
+
+  .picture {
+    width: 2px;
+    height: 20px;
+  }
 }

@@ -10,13 +10,13 @@ CarrierWave.configure do |config|
   if Rails.env.production?
     config.storage = :fog
     config.fog_provider = 'fog/aws'
-    config.fog_directory  = '[S3のバケット名]'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/[S3のバケット名]'
+    config.fog_directory  = [:AMAZONS3_BUCKET]
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/[:AMAZONS3_BUCKET]'
     config.fog_credentials = {
-        provider: 'AWS',
+        provider: 'AWS',s
         # credentialsで管理する場合
-        aws_access_key_id: Rails.application.credentials.aws[:access_key_id],
-        aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],
+        aws_access_key_id: Rails.application.credentials.aws[:ACCESS_KEY_ID],
+        aws_secret_access_key: Rails.application.credentials.aws[:SECRET_ACCESS_KEY=],
         # 環境変数で管理する場合
         # aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
         # aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
