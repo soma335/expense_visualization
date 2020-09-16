@@ -11,6 +11,16 @@ Rails.application.configure do
   config.eager_load = true
 
   config.assets.initialize_on_precompile = false
+  config.action_mailer.default_url_options = {  :host => 'quiet-lowlands-48910.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address:"smtp.gmail.com",
+      domain: 'gmail.com',
+      port:587,
+      user_name: ENV['USER_NAME'],
+      password: ENV['PASSWORD'],
+      authentication: :login
+  }
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
