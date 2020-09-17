@@ -4,14 +4,23 @@
 
 <div class="toolbar"><%= link_to "編集", edit_post_url %></div>
 
-<table class="attr">
+<table>
+  <thead>
   <tr>
-    <th width="150">投稿日時</th>
-    <th>投稿名</th>
-    <td><%= @posts.name %></td>
-    <th>値段</th>
-    <td><%= @posts.price %></td>
     <th>レシート</th>
-    <td id="class" ><%= image_tag(@posts.image.to_s) %></td>
+    <th>購入日</th>
+    <th>値段</th>
   </tr>
+  </thead>
+  <thead>
+  <% @posts.each do |post| %>
+    <tr>
+      <th><%= link_to post.image.to_s, "data-lightbox" => post.image.to_s do %>
+          <%= image_tag post.image.to_s, height: '80', :style=>"width:300;" %>
+        <% end %></th>
+      <th><%= l post.buyday %></th>
+      <th><%= post.price %></th>
+    </tr>
+  <% end %>
+  </thead>
 </table>

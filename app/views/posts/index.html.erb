@@ -2,19 +2,16 @@
   <table>
     <thead>
       <tr>
-        <th>投稿日時</th>
-        <th>No.</th>
+        <th>レシート</th>
+        <th>購入日</th>
         <th>値段</th>
       </tr>
     </thead>
     <thead>
       <% @posts.each do |post| %>
       <tr>
-        <th><%= link_to post.image.to_s, "data-lightbox" => post.image.to_s do %>
-          <%= image_tag post.image.to_s, height: '80', :style=>"width:300;" %>
-          <% end %></th>
-        <%# <th><%= image_tag post.image.to_s %></th>
-        <th><%= post.name %></th>
+        <th><%= link_to image_tag(post.image.to_s), "/posts/:id" %></th>
+        <th><%= l post.buyday %></th>
         <th><%= post.price %></th>
       </tr>
       <% end %>

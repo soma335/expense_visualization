@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :sign_in_required, only: [:show]
 
   def index
-    @posts = Post.all
+    @posts = current_user.posts.all
   end
 
   def show
@@ -36,6 +36,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:image, :name, :price).merge(user_id: current_user.id)
+    params.require(:post).permit(:image, :buyday, :price).merge(user_id: current_user.id)
   end
 end
