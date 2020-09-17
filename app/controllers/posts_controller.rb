@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :sign_in_required, only: [:show]
 
   def index
-    @posts = current_user.posts.all
+    @posts = Post.all
   end
 
   def show
