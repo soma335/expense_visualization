@@ -1,9 +1,12 @@
 class PostsController < ApplicationController
   before_action :sign_in_required, only: [:show]
 
-  def index
-    @posts = Post.all
-  end
+    def index
+      if user_signed_in?
+       @posts = current_user.posts.all
+      end
+    end
+
 
   def show
     @posts = current_user.posts.all
@@ -16,7 +19,6 @@ class PostsController < ApplicationController
   def create
     @posts = Post.new(post_params)
     if @posts.save!
-      flash[:success] = "Micropost created!"
       redirect_to root_url
     else
       render 'posts/index'
